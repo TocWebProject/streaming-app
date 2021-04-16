@@ -1,3 +1,4 @@
+//  Metadata for the list of videos.
 const allVideos = [
     {
         id: "beautiful landscape",
