@@ -57,4 +57,9 @@ router.get('/video/:id', (req, res) => {
         fs.createReadStream(videoPath).pipe(res);
     }
 });
+
+// Route that will handle caption request
+router.get('/video/:id/caption', (req, res) => res.sendFile(`assets/captions/${req.params.id}.vtt`, { root: __dirname }));
+
+
 module.exports = router;
