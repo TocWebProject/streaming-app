@@ -12,15 +12,10 @@ const video = require('./routes/Video.js')
 
 const app = express();
 
-// Video route. Sending video file back to the client
-app.get('/video', (req, res) => {
-    res.sendFile('assets/video1.mp4', { root: __dirname });
-});
-
 // Routes 
-app.use('/', video)
+app.use('/videos', video);
 
-app.use(cors())
+app.use(cors());
 
 // listen to our server
 app.listen(5000, () => {
