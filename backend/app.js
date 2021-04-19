@@ -6,16 +6,21 @@ const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
 const path = require('path');
+const app = express();
+
+var corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
 // Route import
 const video = require('./routes/Video.js')
 
-const app = express();
-
 // Routes 
-app.use('/videos', video);
+app.use('/videos', cors(corsOptions), video);
 
 app.use(cors());
+
 
 // listen to our server
 app.listen(5000, () => {
