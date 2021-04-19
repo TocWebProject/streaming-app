@@ -59,7 +59,8 @@ router.get('/video/:id', (req, res) => {
 });
 
 // Route that will handle caption request
-router.get('/video/:id/caption', (req, res) => res.sendFile(`assets/captions/${req.params.id}.vtt`, { root: __dirname }));
+const captionPath = '/Users/Toc/Sites/streaming-app/backend'
+router.get('/video/:id/caption', (req, res) => res.sendFile(`assets/captions/${req.params.id}.vtt`, { root: captionPath }));
 
 
 module.exports = router;
